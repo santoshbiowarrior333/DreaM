@@ -1,2 +1,2 @@
-# Deduplication-pipeline-for-mapping-to-centromere
-This provides the pipeline for analysis of short-read sequencing reads and mapping to centromere regions
+# pipeline-for-HOR peaks
+This provides the pipeline for analysis of short-reads and mapping to repeated regions such as HOR in centromere
