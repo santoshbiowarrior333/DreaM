@@ -18,8 +18,8 @@ Optional:
    	At this step, code equals the reads in both the output so that it can be processed through trimming softwares. Code "sbatch Sync_DreaM.sh" can be used to run this script, output will be $SYNCED_FILE, $SYNCED_PAIR_FILE.
    	Where, R1 and R2 are two reads from paired end processed by DreaM.awk (resulting in these two deduplicated version).
 3. In the next step, these paired end/ single-end reads can be trimmed with help of Trimmomatic:
-   Refer "mapping.sh" for further processing and obtaining the bigwig files.
+   Refer paired trimming files and single-end/paired-end mapping provided as "$files.sh" for further processing and obtaining the bigwig files using "post_mapping_processing.sh" which will retain only unique alignments and genrate bigwig files that can be visualized directly in the IGV. These files consider T2T assembly and its index for mapping. All the *.sh files can be executed as "sbatch file.sh".
 
 ***Note: These codes must be edited for the resources that are available at the user-end such as number of cores, loading of modules could be different. Also, every line of code can be edited according to the naming convention of user files.
 
-For any query: please reach to path1327@ox.ac.uk.
+For any query: please reach to path1327@ox.ac.uk. The code related to the figure generation has not been provided here. It is available upon request.
