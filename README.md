@@ -12,9 +12,14 @@ DreaM: A universal customized computational pipeline for improved resolution of 
 
 1. DreaM.awk: This script can be used to deduplicate the FASTQ reads (It treats the reads as seperate and not as paired end).
    Note: For deduplication, run this script in the terminal as follows (for file in *.fastq; do awk -f ./DreaM.awk “$file”;done)
-	This script will process all the FASTQ reads in the current folder and split the duplicated and deduplicated reads.
+	This script will process all the FASTQ reads in the current folder and split the duplicated and deduplicated reads as $file_1_DreaM.fastq/$file_2_DreaM.fastq for both the pairs if exist, if the reads are single then it will produce only one file; $file_DreaM.fastq.
 Optional:
-2. Sync_DreaM.awk: Next, step if you are processing paired-end reads, This script must be run for each reads as followed
-   	awk -f ./Sync_DreaM.awk “$file_R1_dedup.fastq” “$file_R2_dedup.fastq”;done
+2. Sync_DreaM.sh: Next, step if you are processing paired-end reads, This script must be run for the folder containing the reads deduplicated in previous step.
+   	At this step, code equals the reads in both the output so that it can be processed through trimming softwares. Code "sbatch Sync_DreaM.sh" can be used to run this script, output will be $SYNCED_FILE, $SYNCED_PAIR_FILE.
    	Where, R1 and R2 are two reads from paired end processed by DreaM.awk (resulting in these two deduplicated version).
-3. 
+3. In the next step, these paired end/ single-end reads can be trimmed with help of Trimmomatic:
+   Refer "trimming.sh", "mapping.sh" and "post_processing.sh" for further processing and obtaining the bigwig files.
+
+***Note: These codes can and should be edited for the resources that are available at the user-end such as number of cores, loading of modules could be different.
+
+For any query: please reach to path1327@ox.ac.uk.
