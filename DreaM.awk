@@ -40,7 +40,7 @@ BEGIN {
 
     # Check if the length and sequence are unique
     key = length(record[1]) "|" record[1];
-    output_file = seen[key] ? base_name "_duplicate.fastq" : base_name "_dedup.fastq";
+    output_file = seen[key] ? base_name "_duplicate.fastq" : base_name "_DreaM.fastq";
     seen[key]++;
 
     # Open the duplicate file if not opened yet
