@@ -25,8 +25,8 @@ process_paired_end() {
     "${base1}_paired_trimmed.fastq" "${base1}_unpaired.fastq" \
     "${base2}_paired_trimmed.fastq" "${base2}_unpaired.fastq" \
     ILLUMINACLIP:$ADAPTERS:2:30:10 \
-    CROP:145 HEADCROP:13 MINLEN:90 \
-    LEADING:5 TRAILING:5 SLIDINGWINDOW:4:15
+    CROP:145 HEADCROP:13 \
+    LEADING:5 TRAILING:5 SLIDINGWINDOW:4:15 MINLEN:90
 
   echo "Completed processing $file1 and $file2"
 }
